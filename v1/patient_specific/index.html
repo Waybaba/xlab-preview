@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Patient-specific Heart Modeling for Arrhythmia Ablation | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="Patient-specific Heart Modeling for Arrhythmia Ablation" property="og:title">
+<meta content="xLab" name="author">
+<meta content="en" property="og:locale">
+<meta content="Process of patient-specific heart modeling is: extract patient data to tune heart model parameters, next, initiate arrhythmia (the heart’s initial state is also extracted from patient data), then solve the heart model equations to simulate patient-specific arrhythmias." name="description"/>
+<meta content="Process of patient-specific heart modeling is: extract patient data to tune heart model parameters, next, initiate arrhythmia (the heart’s initial state is also extracted from patient data), then solve the heart model equations to simulate patient-specific arrhythmias." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/patient_specific/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/patient_specific/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-01-11T09:54:00-05:00" property="article:published_time"/>
+<meta content="2026-01-11T09:54:00-05:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Patient-specific Heart Modeling for Arrhythmia Ablation" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLab"},"dateModified":"2026-01-11T09:54:00-05:00","datePublished":"2026-01-11T09:54:00-05:00","description":"Process of patient-specific heart modeling is: extract patient data to tune heart model parameters, next, initiate arrhythmia (the heart’s initial state is also extracted from patient data), then solve the heart model equations to simulate patient-specific arrhythmias.","headline":"Patient-specific Heart Modeling for Arrhythmia Ablation","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/patient_specific/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLab"},"url":"https://waybaba.github.io/xlab-preview/v1/patient_specific/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+>
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Patient-specific Heart Modeling for Arrhythmia Ablation</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim hero-video">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/Arrhythmia%20Simulations.mp4" type="video/mp4"/>
+</video>
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        Patient-specific Heart Modeling for Arrhythmia Ablation
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>Atrial arrhythmia is a prevalent heart disease that results in weak and irregular contractions of the atria. It affects millions of people worldwide. Cardiac ablation is among the most successful treatment options. During the procedure, catheters are inserted into the left atrium to map the atrium geometry and record endocardium electrograms that are then converted into electro anatomical maps to pinpoint the arrhythmia source locations.</p>
+<p>However, identifying arrhythmia sources is challenging. The electrograms are asynchronous and can be susceptible to noise. The spatial distribution of sampling sites is non-uniform, which leads to inaccurate maps. Identifying arrhythmia source locations is not a trivial task. Therefore, an ablation procedure often lasts from 3 to 6 hours, and arrhythmia recurrence within 12 months after first ablation is about 45%.</p>
+<p>To address these challenges, we are developing an integrated computational heart model to guide left atrium arrhythmia ablation. Our system takes in the left atrium geometry and electrograms, processes them to extract regional tissue properties, which are used to tune a heart model, creating a patient-specific whole-atrium model. With this model, we can simulate and detect arrhythmia sources, and provide ablation assistance. To build such a system, we investigated the fiber effects on atrial activation patterns. So far, we developed a fast heart model tuning method which takes only a few seconds of computation time on a personal computer, enabling real-time assistance during the ablation procedure. Current results show we achieve high accuracy in simulating arrhythmias, which we validated on patient data.</p>
+<h2 id="computational-heart-model">Computational Heart Model</h2>
+<p>The overview process of patient-specific heart modeling is: extract patient data to tune heart model parameters, next, initiate arrhythmia (the heart’s initial state is also extracted from patient data), then solve the heart model equations to simulate patient-specific arrhythmias.</p>
+<p><img alt="Heart modeling overview" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/heart_modeling.png"/></p>
+<p>Below are the heart model equations. They calculate the activation action potentials. There are parameters that affect the shape of the action potential, and parameters that affect the activation propagation. These parameters are tuned locally. Every vertex of the mesh has its own set of parameter values.</p>
+<p><img alt="Heart model parameters" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/model_parameters.png"/></p>
+<h2 id="spatial-discretization">Spatial Discretization</h2>
+<p>To solve the heart model equations, we discretize the left atrium in space. We transform the 3D triangular mesh into Cartesian nodes. For a mesh vertex, Cartesian nodes within a radius are created. And for every vertex, we create the associated cartesian nodes. As a result, the Cartesian nodes will wrap around the mesh.</p>
+<p><img alt="Cartesian node creation" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/create_nodes.png"/></p>
+<h2 id="temporal-discretization">Temporal Discretization</h2>
+<p>We discretize the heart model equations in time using the explicit Euler method. With some initial values at time 0, we can compute the values of the next time step.</p>
+<p><img alt="Time discretization" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/discretize_time.png"/></p>
+<h2 id="diffusion-modeling">Diffusion Modeling</h2>
+<p>To compute the diffusion term, we assumed no-flux boundary conditions, and used a 19-node stencil. The action potential of the red node will be diffused into its 18 neighbors according to the diffusion coefficient matrices.</p>
+<p><img alt="Diffusion computation" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/compute_diffusion_term.png"/></p>
+<h2 id="arrhythmia-simulation-examples">Arrhythmia Simulation Examples</h2>
+<p>Here are examples of arrhythmia simulations.</p>
+<ul>
+<li><strong>Focal arrhythmia</strong>: Activation originates at an abnormal location.</li>
+<li><strong>Rotor arrhythmia</strong>: Spiral waves cause irregular heartbeat.</li>
+<li><strong>Zigzag propagation</strong>: Complex scar distributions create activation tunnels of various conduction velocities.</li>
+<li><strong>Atrial fibrillation</strong>: Chaotic activation waves that have no organizations.</li>
+</ul>
+<div style="max-width: 720px; margin: 2rem auto;">
+<video autoplay="" height="405" loop="" muted="" playsinline="" width="100%">
+<source src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/Arrhythmia%20Simulations.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </source></video>
+</div>
+<h2 id="diffusion-coefficient-tuning">Diffusion Coefficient Tuning</h2>
+<p>Our solution to the lack of fiber data is to compensate that with a diffusion coefficient tuning. Tuning is challenging:</p>
+<ol>
+<li>Heart model is nonlinear.</li>
+<li>Diffusion is influencing the neighbor nodes, not the immediate vicinities.</li>
+<li>Sensitive to the initial guess values, adjustment steps, ending criteria, etc.</li>
+</ol>
+<p>We developed an optimization process to overcome the tuning challenges. We process the patient data to obtain the true local activation times. Then we run a simulation with some initial guess diffusions, and process the simulation result to obtain the simulated local activation times. These two sets of activation times are compared and the diffusion values are updated according to this comparison. New simulations are run and diffusion values are adjusted in each iteration. The tuning is done when the difference between patient activation time and simulation activation time is minimized.</p>
+<p>To make the tuning faster, we exploit the relation between conduction velocity and diffusion coefficient, which reduces the number of iterations needed to reach the optimum.</p>
+<p>As illustrated in the figure below, we can see that scars are taken care of too. The figure on the left shows scar regions in red, and the figure on the right, shows a diffusion coefficient map, where red represents low conductivity. The red regions between these two figures are almost the same. Which means the tuning is accurate.</p>
+<p><img alt="Diffusion tuning results" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/diffusion_tuning.png"/></p>
+<h2 id="experimental-results">Experimental Results</h2>
+<p>Our model achieved high accuracy of simulating arrhythmias. We ran experiments on 7 patient’s left atrium.</p>
+<h3 id="focal-arrhythmia">Focal Arrhythmia</h3>
+<p>For focal arrhythmia, we achieved activation time accuracy of 96%.</p>
+<p><img alt="Focal LAT map" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/focal_lat_map.png"/></p>
+<h3 id="rotor-arrhythmia">Rotor Arrhythmia</h3>
+<p>For rotor arrhythmia, we achieved activation time accuracy of 93%.</p>
+<p><img alt="Rotor LAT map" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/rotor_lat_map.png"/></p>
+<h2 id="patient-validation-studies">Patient Validation Studies</h2>
+<p>We tested our model with 15 patient data, to show that our model is capable of accurately reproducing patient arrhythmias.</p>
+<p>The figures below are the results of 7 atrial tachycardia maps. We achieved an average activation time error of 10.97 ms, with an average correlation of 0.81.</p>
+<p><img alt="Patient simulation LAT maps – AT" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/patient_sim_lat_maps_at.png"/></p>
+<p>These are the results of 8 sinus rhythm maps. We achieved an average activation time error of 5.47 ms, with an average correlation of 0.95. Sinus rhythm maps are helpful: Oftentimes, patient comes in the operating room in sinus rhythm, or will get cardioversion into sinus rhythm, to acquire a voltage map for assisting pulmonary vein isolation.</p>
+<p><img alt="Patient simulation LAT maps – SR" src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Patient-Specific/patient_sim_lat_maps_sr.png"/></p>
+<h2 id="publications">Publications</h2>
+<ul>
+<li>
+<p><strong>Individualization of atrial tachycardia models for clinical applications: Performance of fiber-independent model</strong><br/>
+<em>Jiyue He, Arkady Pertsov, John Bullinga, Rahul Mangharam</em><br/>
+<em>IEEE Transactions on Biomedical Engineering</em>, 2023.</p>
+</li>
+<li>
+<p><strong>Fiber Organization Has Little Effect on Electrical Activation Patterns during Focal Arrhythmias in the Left Atrium</strong><br/>
+<em>Jiyue He, Arkady M. Pertsov, Elizabeth M. Cherry, Flavio H. Fenton, Caroline H. Roney, Steven A. Niederer, Zirui Zang, Rahul Mangharam</em><br/>
+<em>IEEE Transactions on Biomedical Engineering</em>, 2023.<br/>
+<em>Feature Article</em></p>
+</li>
+<li>
+<p><strong>Tachycardia Activation Pattern Predictivity of a Fiber-Independent Left Atrium Model</strong><br/>
+<em>Jiyue He, Arkady Pertsov, John Bullinga, Rahul Mangharam</em><br/>
+<em>Cardiac Physiome Society</em>, 2023.</p>
+</li>
+<li>
+<p><strong>Real-Time Atrial Tachycardia Ablation Guidance with a Left Atrium Model</strong><br/>
+<em>Jiyue He, Arkady Pertsov, Rahul Mangharam</em><br/>
+<em>Heart Rhythm Society</em>, 2023.</p>
+</li>
+<li>
+<p><strong>Patient-Specific Heart Model towards Atrial Fibrillation</strong><br/>
+<em>Jiyue He, Arkady Pertsov, Sanjay Dixit, Katie Walsh, Eric Toolan, Rahul Mangharam</em><br/>
+<em>Proceedings of the ACM/IEEE 12th International Conference on Cyber-Physical Systems (ICCPS)</em>, May 2021.</p>
+</li>
+<li>
+<p><strong>Electroanatomic Mapping to Determine Scar Regions in Patients with Atrial Fibrillation</strong><br/>
+<em>Jiyue He, Kuk Jin Jang, Katie Walsh, Jackson Liang, Sanjay Dixit, Rahul Mangharam</em><br/>
+<em>41st International Engineering in Medicine and Biology Conference (IEEE EMBC)</em>, July 2019.</p>
+</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Jiyue He, Arkady Pertsov, Sanjay Dixit, Katie Walsh, Eric Toolan, Rahul Mangharam</p>
+<h2 id="citation">Citation</h2>
+<pre><code>
+
+@inproceedings{10.1145/3450267.3450532,
+author = {He, Jiyue and Pertsov, Arkady and Dixit, Sanjay and Walsh, Katie and Toolan, Eric and Mangharam, Rahul},
+title = {Patient-specific heart model towards atrial fibrillation},
+year = {2021},
+isbn = {9781450383530},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3450267.3450532},
+doi = {10.1145/3450267.3450532},
+booktitle = {Proceedings of the ACM/IEEE 12th International Conference on Cyber-Physical Systems},
+pages = {33–43},
+numpages = {11},
+location = {Nashville, Tennessee},
+series = {ICCPS '21}
+}
+
+</code></pre>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#computational-heart-model">Computational Heart Model</a></li>
+<li><a href="#spatial-discretization">Spatial Discretization</a></li>
+<li><a href="#temporal-discretization">Temporal Discretization</a></li>
+<li><a href="#diffusion-modeling">Diffusion Modeling</a></li>
+<li><a href="#arrhythmia-simulation-examples">Arrhythmia Simulation Examples</a></li>
+<li><a href="#diffusion-coefficient-tuning">Diffusion Coefficient Tuning</a></li>
+<li><a href="#experimental-results">Experimental Results</a></li>
+<li><a href="#patient-validation-studies">Patient Validation Studies</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#citation">Citation</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Co-design of Anytime Computation and Control for Autonomous Systems | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="Co-design of Anytime Computation and Control for Autonomous Systems" property="og:title">
+<meta content="xLab" name="author">
+<meta content="en" property="og:locale">
+<meta content="My team designed a variety of Robust Anytime Model Predictive Controllers that instruct the perception pipeline." name="description"/>
+<meta content="My team designed a variety of Robust Anytime Model Predictive Controllers that instruct the perception pipeline." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/anytime/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/anytime/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-01-15T09:54:00-05:00" property="article:published_time"/>
+<meta content="2026-01-15T09:54:00-05:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Co-design of Anytime Computation and Control for Autonomous Systems" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLab"},"dateModified":"2026-01-15T09:54:00-05:00","datePublished":"2026-01-15T09:54:00-05:00","description":"My team designed a variety of Robust Anytime Model Predictive Controllers that instruct the perception pipeline.","headline":"Co-design of Anytime Computation and Control for Autonomous Systems","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/anytime/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLab"},"url":"https://waybaba.github.io/xlab-preview/v1/anytime/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+>
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Co-design of Anytime Computation and Control for Autonomous Systems</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim hero-video">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/Anytime/Anytime.mp4" type="video/mp4"/>
+</video>
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        Co-design of Anytime Computation and Control for Autonomous Systems
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>Most perception algorithms are run-to-completion, operate independently of the control subsystem and dominate the energy footprint of autonomous systems. To achieve safe long-term autonomy, it is essential to have energy-efficient on-board operations by co-designing perception and control algorithms. In this effort, my team designed a variety of Robust Anytime Model Predictive Controllers that instruct the perception pipeline how long to run based on what quality of estimate is needed, thus saving computation energy when a low-quality estimate suffices (say, an autonomous car driving on an empty road), and cranking up the computation when a high-quality estimate is needed quickly, e.g., in a near-miss. Anytime AV architectures have been demonstrated to outperform regular MPC and significantly reduced energy consumption on drones running visual odometry for perception.</p>
+<h2 id="co-design-of-anytime-computation">Co-design of Anytime Computation</h2>
+<p>Perception-based state estimation for autonomous system is generally a computationally expensive process, both in terms of execution time and energy consumption on the computation platform. This work develops a contract-driven framework for closed-loop interplay between: a) a predictive control algorithm and b) a flexible anytime perception-based state estimator to trade-off computation time (and energy) for estimation accuracy while guaranteeing robust (or chance-constrained) constraint satisfaction of the autonomous system. Experimental results show the benefit of this framework over approaches that do not leverage this co-design.</p>
+<p><img alt="anytime" src="https://yashpant.github.io/assets/img/anytime.png"/></p>
+<h2 id="publications">Publications</h2>
+<ul>
+<li>
+<p><strong>Anytime Computation and Control for Autonomous Systems</strong><br/>
+<em>Pant, Abbas, Mohta, Quaye, Nghiem, Devietti, Mangharam</em><br/>
+<em>IEEE Transactions on Control Systems Technology</em>, 2020.</p>
+</li>
+<li>
+<p><strong>Robust Model Predictive Control for Non-Linear Systems with Input and State Constraints via Feedback Linearization</strong><br/>
+<em>Pant, Abbas, Mangharam</em><br/>
+<em>IEEE Conference on Decision and Control (CDC)</em>, 2016.</p>
+</li>
+<li>
+<p><strong>Co-design of Anytime Computation and Robust Control</strong><br/>
+<em>Pant, Abbas, Mohta, Nghiem, Devietti, Mangharam</em><br/>
+<em>Real-Time Systems Symposium (RTSS)</em>, 2015.</p>
+</li>
+<li>
+<p><strong>Power-efficient Algorithms for Autonomous Navigation</strong><br/>
+<em>Pant, Abbas, Nischal, Kelkar, Kumar, Devietti, Mangharam</em><br/>
+<em>International Conference on Computer Science and Engineering (ICCSE)</em>, 2015.</p>
+</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Pant, Abbas, Nischal, Kelkar, Kumar, Devietti, Mangharam, Quaye</p>
+<h2 id="citation">Citation</h2>
+<pre><code>
+@ARTICLE{9051687,
+  author={Pant, Yash Vardhan and Abbas, Houssam and Mohta, Kartik and Quaye, Rhudii A. and Nghiem, Truong X. and Devietti, Joseph and Mangharam, Rahul},
+  journal={IEEE Transactions on Control Systems Technology}, 
+  title={Anytime Computation and Control for Autonomous Systems}, 
+  year={2021},
+  volume={29},
+  number={2},
+  pages={768-779},
+  keywords={Delays;Contracts;Prediction algorithms;Estimation error;Autonomous systems;Real-time systems;Adaptive systems;autonomous systems;computer vision (CV);predictive control;robust control},
+  doi={10.1109/TCST.2020.2979388}}
+
+</code></pre>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#co-design-of-anytime-computation">Co-design of Anytime Computation</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#citation">Citation</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

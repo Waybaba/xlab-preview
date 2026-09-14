@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Computer-Aided Clinical Trials | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="Computer-Aided Clinical Trials" property="og:title">
+<meta content="xLab" name="author">
+<meta content="en" property="og:locale">
+<meta content="CACTs can be performed with very little cost before an actual clinical trial and the results can potentially provide useful insights for planning and conduction of the actual clinical trial." name="description"/>
+<meta content="CACTs can be performed with very little cost before an actual clinical trial and the results can potentially provide useful insights for planning and conduction of the actual clinical trial." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/cact/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/cact/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/img/posts/cact/cact_cover.gif" property="og:image"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-01-01T09:54:00-05:00" property="article:published_time"/>
+<meta content="2026-01-01T09:54:00-05:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/img/posts/cact/cact_cover.gif" name="twitter:image"/>
+<meta content="Computer-Aided Clinical Trials" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLab"},"dateModified":"2026-01-01T09:54:00-05:00","datePublished":"2026-01-01T09:54:00-05:00","description":"CACTs can be performed with very little cost before an actual clinical trial and the results can potentially provide useful insights for planning and conduction of the actual clinical trial.","headline":"Computer-Aided Clinical Trials","image":"https://waybaba.github.io/xlab-preview/v1/img/posts/cact/cact_cover.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/cact/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLab"},"url":"https://waybaba.github.io/xlab-preview/v1/cact/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+ style="background: url('https://waybaba.github.io/xlab-preview/v1/img/posts/cact/cact_cover.gif') no-repeat center center; background-size: cover;" >
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Computer-Aided Clinical Trials </h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim" style="background: url('https://waybaba.github.io/xlab-preview/v1/img/posts/cact/cact_cover.gif') no-repeat center center; background-size: cover;">
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        Computer-Aided Clinical Trials 
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>Clinical trials are the major bottleneck in getting new devices to market: they take several years, cost millions of dollars, and expose consenting patients to yet-unproven devices. My team is developing Computer-Aided Clinical Trials (CACT) as a formal and statistical framework that rigorously incorporates evidence generated from computer simulations and model-checking into the design of clinical trials. This can be used to reduce the necessary cohort size, increase trial power, and reduce the probability of failure.</p>
+<p>A major obstacle to acceptance in-silico preclinical trials as regulatory-grade evidence is the lack of a framework for explicitly modeling sources of uncertainty in simulation results and quantifying the effect on trial outcomes. By formulating a CACT within a Bayesian statistical framework we can quantify the uncertainty propagation from modeling and simulation to capture the robustness across all stages of the trial. CACTs have been validated in retrospective clinical trials and in hardware testbeds where our heart models directly interact with commercial implantable cardiac devices.</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>The safety and efficacy of high-risk medical devices are validated in clinical trials, in which the devices are evaluated on selected group of real patients. Clinical trials are expensive. Phase III trials can run for several years, cost millions of dollars, and expose patients to unproven devices.</p>
+<p>In this work, we propose Computer-Aided Clinical Trials (CACT), which uses computer models of patient physiology to represent variability of patient conditions. CACTs can be performed with very little cost before an actual clinical trial and the results can potentially provide useful insights for planning and conduction of the actual clinical trial.</p>
+<p><img alt="Problem Statement" src="../img/posts/cact/MBCT.png"/></p>
+<h2 id="case-study-implantable-cardioverter-difibrillators">Case Study: Implantable Cardioverter Difibrillators</h2>
+<p>Implantable Cardioverter Difibrillators (ICDs) are designed to identify fatal heart conditions like Ventricular Tachycardia (VT) and deliver electrical shock to restore normal heart rhythm. A typical ICD has two leads inserted into the heart which measure local electrical activities in the right atrium and right ventricle, respectively. The electrical signals are referred to as Electrograms (EGMs).</p>
+<p>Based on the timing and morphology of the EGMs, the ICD needs to distinguish between fatal Ventricular Tachycardia (VT) and non-fatal Supra-Ventricular Tachycardia (SVT). It is important to deliver therapy for all VTs, but therapies delivered during SVTs are considered as inappropriate. Inapprppriate shocks are decrimental to patient health and device manufacturers have developed algorithms to reduce the frequency of inappropriate therapies.</p>
+<p>A clinical trial named Rhythm ID Head-to-head Trial (RIGHT) was conducted in 2005 to evaluate the rate of inappropriate therapies by two device algorithms: PRLogic from Medtronic and Rhythm ID from Boston Scientific. The trial lasted 6 years and the result was against the assumptions made before the trial, which makes the trial a failure. Imagine we are in 2005, can we use computer models to conduct a CACT and predict how the actual trial will go to prevent trial failure?</p>
+<p><img alt="Case Study" src="../img/posts/cact/MBCT_pro.png"/></p>
+<h2 id="cact-for-vtsvt-discrimination">CACT for VT/SVT Discrimination</h2>
+<p>In this work, we developed a virtual population of patients consists of computer models of the heart and performed a virtual trial following RIGHT procedure. We showed that CACTs are capable of generating results that can provide insights to an actual clinical trial.</p>
+<p>A CACT for VT/SVT discrimination can be divided into 4 steps. In Step 1 we extracted timing and morphological features of EGMs in different heart conditions from real-patient EGMs. In Step 2 we developed a timing model of the heart which can generate synthetic EGMs as inputs to the devices. In Step 3 we sample from the features extracted in Step 1 to generate a large virtual population of heart models. Then in Step 4 we connect the heart models with two device algorithms and evaluate their rate of inappropriate therapies.</p>
+<p><img alt="CACT" src="../img/posts/cact/MBCT_over.png"/></p>
+<h3 id="step-1-feature-extraction-from-patient-data">Step 1: Feature Extraction From Patient Data</h3>
+<p>As first step, we would like to extract timing and morphology features from patient EGMs. The distributions of these parameters will be used to construct virtual cohort. The following figure shows how domain expert can identify and extract EGM morphologies from different sources.</p>
+<p><img alt="Step 1" src="../img/posts/cact/MBCT_adj.png"/></p>
+<h3 id="step-2-physiological-modeling-of-the-heart">Step 2: Physiological Modeling of The Heart</h3>
+<p>The physiological model of the heart consists of two components: the timing model and the morphology model. Together the model is able to generate synthetic EGMs as inputs to the device algorithms.</p>
+<p>The timing model of the heart captures the timing of generation and conduction of electrical signals throughout the heart. More details of the timing model can be found HERE. The timing model not only provides the timing for events in both the atrial and ventricular channels, but also provides the source for each event, which determines the morphology of the event.</p>
+<p>The morphology model of the heart is based on the clinical observation that electrical events with the same source have the same morphology. We extracted EGM morphologies from different sources in Step 1 and by overlying the EGM morphologies on timing events we are able to generate synthetic EGM singals.</p>
+<p><img alt="Step 2" src="../img/posts/cact/MBCT_egm.png"/></p>
+<h3 id="step-3-synthetic-cohort-generation">Step 3: Synthetic Cohort Generation</h3>
+<p>The synthetic corhort was generated by sampling from the distributions of timing and morphology features of EGMs for different heart conditions. Due to the limited information contained in patient data, the distribution of some parameters cannot be extracted from patient data. For those parameters we used nominal values from literature.</p>
+<h3 id="step-4-in-silico-trials-for-vtsvt-discrimination-algorithms">Step 4: in silico trials for VT/SVT Discrimination Algorithms</h3>
+<p>in silico trials provide us the flexibility to evaluate devices not only on large population, but also in different patient distributions. We evaluated the two VT/SVT discrimination algorithms on different arrhythmia distributions and compared the rate of inappropriate therapy, which is shown below.</p>
+<p><img alt="Step 4" src="../img/posts/cact/MBCT_dist.png"/></p>
+<p>We can also obtain condition-specific results with high statistical significance, which cannot be done in real trials.</p>
+<p><img alt="Step 4.1" src="../img/posts/cact/MBCT_case.png"/></p>
+<p>Inappropriate device programming is an important reason for inappropriate therapies. In real trials you cannot try different parameter settings on a single patient, and the parameter setting has to be specified according to the patient’s need. With in silico trials, we can test any parameter settings on each patient and have a better understanding of the effect of different parameters on specificity.</p>
+<p><img alt="Step 4.2" src="../img/posts/cact/MBCT_R3.png"/></p>
+<h2 id="publications">Publications</h2>
+<ul>
+<li><strong>Computer Aided Clinical Trials for Implantable Cardiac Devices</strong><br/>
+<em>Jang, Kuk; Weimer, James; Abbas, Houssam; Jiang, Zhihao; Liang, Jackson; Dixit, Sanjay; Mangharam, Rahul</em><br/>
+<em>2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</em>, 2018, Pages 1-4.<br/>
+<a href="https://doi.org/10.1109/EMBC.2018.8513284">Link to Paper</a></li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Kuk Jang, James Weimer, Houssam Abbas, Zhihao Jiang, Jackson Liang, Sanjay Dixit, Rahul Mangharam</p>
+<h2 id="citation">Citation</h2>
+<pre><code>
+@INPROCEEDINGS{8513284,
+  author={Jang, Kuk and Weimer, James and Abbas, Houssam and Jiang, Zhihao and Liang, Jackson and Dixit, Sanjay and Mangharam, Rahul},
+  booktitle={2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}, 
+  title={Computer Aided Clinical Trials for Implantaule Cardiac Devices}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={1-4},
+  keywords={Physiology;Uncertainty;Clinical trials;Heart;Computational modeling},
+  doi={10.1109/EMBC.2018.8513284}}
+
+</code></pre>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#problem-statement">Problem Statement</a></li>
+<li><a href="#case-study-implantable-cardioverter-difibrillators">Case Study: Implantable Cardioverter Difibrillators</a></li>
+<li><a href="#cact-for-vtsvt-discrimination">CACT for VT/SVT Discrimination</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#citation">Citation</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

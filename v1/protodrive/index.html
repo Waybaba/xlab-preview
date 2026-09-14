@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts" property="og:title">
+<meta content="xLab" name="author">
+<meta content="en" property="og:locale">
+<meta content="We aim to develop a control scheme to reduce the peak power drawn from the source for hybrid energy systems with limited computation power and limited load forecasts." name="description"/>
+<meta content="We aim to develop a control scheme to reduce the peak power drawn from the source for hybrid energy systems with limited computation power and limited load forecasts." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/protodrive/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/protodrive/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-01-15T09:54:00-05:00" property="article:published_time"/>
+<meta content="2026-01-15T09:54:00-05:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLab"},"dateModified":"2026-01-15T09:54:00-05:00","datePublished":"2026-01-15T09:54:00-05:00","description":"We aim to develop a control scheme to reduce the peak power drawn from the source for hybrid energy systems with limited computation power and limited load forecasts.","headline":"Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/protodrive/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLab"},"url":"https://waybaba.github.io/xlab-preview/v1/protodrive/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+>
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim hero-video">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://pub-6191ce2447d545b0ba681f0dc19a861c.r2.dev/Protodrive_opt.mp4" type="video/mp4"/>
+</video>
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>Hybrid energy systems, which consist of a load powered by a source and a form of energy storage, find applications in many systems, e.g., the electric grid and electric vehicles. A key problem for hybrid energy systems is the reduction of peak power consumption to ensure cost-efficient operation as peak power draws require additional resources and adversely affect the system reliability and lifetime. Furthermore, in some cases such as electric vehicles, the load dynamics are fast, not perfectly known in advance and the on-board computation power is often limited, making the implementation of traditional optimal control difficult. We aim to develop a control scheme to reduce the peak power drawn from the source for hybrid energy systems with limited computation power and limited load forecasts. We propose a scheme with two control levels and provide a sufficient condition for control of the different energy storage/generation components to meet the instantaneous load while satisfying a peak power threshold. The scheme provides performance comparable to Model Predictive Control, while requiring less computation power and only coarse-grained load predictions. For a case study, we implement the scheme for a battery-supercapacitor-powered electric vehicle with real world drive cycles to demonstrate the low execution time and effective reduction of the battery power (hence temperature), which is crucial to the lifetime of the battery.</p>
+<div style="max-width: 720px; margin: 2rem auto;">
+<iframe allowfullscreen="" frameborder="0" height="405" src="https://www.youtube.com/embed/ZWIuTwJ4Npk" title="Protodrive: Peak Power Reduction for Hybrid Energy Storage Systems with Limited Load Forecasts" width="100%">
+</iframe>
+</div>
+<h2 id="publications">Publications</h2>
+<ul>
+<li>
+<p><strong>Peak Power Reduction in Hybrid Energy Systems with Limited Load Forecasts</strong><br/>
+<em>Pant, Nghiem, Mangharam</em><br/>
+<em>American Control Conference (ACC)</em>, 2014.</p>
+</li>
+<li>
+<p><strong>Final Report: Protodrive: Simulation of Electric Vehicle Powertrains</strong><br/>
+<em>Price, Jain, Pant, Mangharam</em><br/>
+<em>World Embedded Software Competition (third place finish)</em>, 2013.</p>
+</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Pant, Yash V. and Nghiem, Truong X. and Mangharam, Rahul</p>
+<h2 id="citation">Citation</h2>
+<pre><code>
+
+@INPROCEEDINGS{6859145,
+  author={Pant, Yash V. and Nghiem, Truong X. and Mangharam, Rahul},
+  booktitle={2014 American Control Conference}, 
+  title={Peak power reduction in hybrid energy systems with limited load forecasts}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={4212-4217},
+  keywords={Batteries;Optimization;System-on-chip;Load forecasting;Prediction algorithms;Predictive control for linear systems;Optimization;Automotive},
+  doi={10.1109/ACC.2014.6859145}}
+
+</code></pre>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#citation">Citation</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

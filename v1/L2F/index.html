@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Learning-to-Fly (L2F): Learning-based mission-aware Collision Avoidance | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="Learning-to-Fly (L2F): Learning-based mission-aware Collision Avoidance" property="og:title">
+<meta content="Rodionova, Pant, Jang, Abbas, Rahul Mangharam" name="author">
+<meta content="en" property="og:locale">
+<meta content="This project aims to develop such methods by combining learning-based decision making and decentralized Model Predictive Control to perform on-the-fly, predictive Collision Avoidance (CA) between two (co-operative) drones." name="description"/>
+<meta content="This project aims to develop such methods by combining learning-based decision making and decentralized Model Predictive Control to perform on-the-fly, predictive Collision Avoidance (CA) between two (co-operative) drones." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/L2F/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/L2F/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/L2F/img/posts/L2F/L2F_cover.gif" property="og:image"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-01-10T09:54:00-05:00" property="article:published_time"/>
+<meta content="2026-01-10T09:54:00-05:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/L2F/img/posts/L2F/L2F_cover.gif" name="twitter:image"/>
+<meta content="Learning-to-Fly (L2F): Learning-based mission-aware Collision Avoidance" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rodionova, Pant, Jang, Abbas, Rahul Mangharam"},"dateModified":"2026-01-10T09:54:00-05:00","datePublished":"2026-01-10T09:54:00-05:00","description":"This project aims to develop such methods by combining learning-based decision making and decentralized Model Predictive Control to perform on-the-fly, predictive Collision Avoidance (CA) between two (co-operative) drones.","headline":"Learning-to-Fly (L2F): Learning-based mission-aware Collision Avoidance","image":"https://waybaba.github.io/xlab-preview/v1/L2F/img/posts/L2F/L2F_cover.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/L2F/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"Rodionova, Pant, Jang, Abbas, Rahul Mangharam"},"url":"https://waybaba.github.io/xlab-preview/v1/L2F/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+ style="background: url('https://waybaba.github.io/xlab-preview/v1/img/posts/L2F/L2F_cover.gif') no-repeat center center; background-size: cover;" >
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Learning-to-Fly (L2F): Learning-based mission-aware Collision Avoidance</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim" style="background: url('https://waybaba.github.io/xlab-preview/v1/img/posts/L2F/L2F_cover.gif') no-repeat center center; background-size: cover;">
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        Learning-to-Fly (L2F): Learning-based mission-aware Collision Avoidance
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>In order for fleets of drones managed by different operators to share an airspace, they require a fast, reliable and fair Collision Avoidance (CA) approach to ensure safety. This project aims to develop such methods by combining learning-based decision making and decentralized Model Predictive Control to perform on-the-fly, predictive Collision Avoidance (CA) between two (co-operative) drones. In addition to performing CA in real-time, L2F also ensures that the drones do not violate their original mission requirements. The video below shows a simulation where two pairs of drones are have conflicting pre-planned trajectories, and also shows the resulting safe trajectories obtained via L2F.</p>
+<div style="max-width: 720px; margin: 2rem auto;">
+<iframe allowfullscreen="" frameborder="0" height="405" src="https://www.youtube.com/embed/KXXPIx0Pnbw" title="Learning-to-Fly: 4 UAS Collision Avoidance Simulation" width="100%">
+</iframe>
+</div>
+<h2 id="publications">Publications</h2>
+<ul>
+<li>
+<p><strong>Mission-aware, Learning-to-Fly: Learning-based Collision Avoidance for Scalable Urban Air Mobility</strong><br/>
+<em>Rodionova, Pant, Jang, Abbas, Mangharam</em><br/>
+<em>IEEE International Conference on Intelligent Transportation Systems (ITSC)</em>, 2020.</p>
+</li>
+<li>
+<p><strong>Learning-to-Fly RL: Reinforcement Learning-based Collision Avoidance for Scalable Urban Air Mobility</strong><br/>
+<em>Jang, Pant, Rodionova, Mangharam</em><br/>
+<em>AIAA/IEEE Digital Avionics Systems Conference (DASC)</em>, 2020.</p>
+</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Rodionova, Pant, Jang, Abbas, Mangharam</p>
+<h2 id="citation">Citation</h2>
+<pre><code>
+@misc{rodionova2020learningtoflylearningbasedcollisionavoidance,
+      title={Learning-to-Fly: Learning-based Collision Avoidance for Scalable Urban Air Mobility}, 
+      author={Alëna Rodionova and Yash Vardhan Pant and Kuk Jang and Houssam Abbas and Rahul Mangharam},
+      year={2020},
+      eprint={2006.13267},
+      archivePrefix={arXiv},
+      primaryClass={eess.SY},
+      url={https://arxiv.org/abs/2006.13267}, 
+}
+</code></pre>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#citation">Citation</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

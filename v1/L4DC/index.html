@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming" property="og:title">
+<meta content="xLAB" name="author">
+<meta content="en" property="og:locale">
+<meta content="A hybrid learning-to-optimize framework for accelerating parametric MIQP with feasibility guarantees." name="description"/>
+<meta content="A hybrid learning-to-optimize framework for accelerating parametric MIQP with feasibility guarantees." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/L4DC/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/L4DC/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-02-09T14:19:19-05:00" property="article:published_time"/>
+<meta content="2026-02-09T14:19:19-05:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLAB"},"dateModified":"2026-02-09T14:19:19-05:00","datePublished":"2026-02-09T14:19:19-05:00","description":"A hybrid learning-to-optimize framework for accelerating parametric MIQP with feasibility guarantees.","headline":"Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/L4DC/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLAB"},"url":"https://waybaba.github.io/xlab-preview/v1/L4DC/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+>
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim hero-video">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://pub-6191ce2447d545b0ba681f0dc19a861c.r2.dev/animation.mp4" type="video/mp4"/>
+</video>
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>This work proposes a <strong>learning-to-optimize (L2O) framework</strong> for accelerating the solution of <em>parametric</em> MIQP problems by learning structured solution components directly from data. The key idea is to predict high-quality <strong>integer decisions</strong> using a neural network, while preserving exact continuous optimality by solving a <strong>differentiable quadratic programming (QP) layer</strong> conditioned on the predicted integers. By explicitly separating discrete and continuous variables, the framework leverages problem structure and improves both feasibility and performance.</p>
+<p>To train the model, we introduce a <strong>hybrid loss function</strong> that combines:</p>
+<ul>
+<li>a <strong>supervised loss</strong>, encouraging predicted integer solutions to match globally optimal ones when labels are available, and</li>
+<li>a <strong>self-supervised loss</strong>, derived directly from the MIQP objective and constraints, promoting feasibility and consistency even without labeled solutions.</li>
+</ul>
+<p>This hybrid learning strategy bridges the gap between purely supervised and purely self-supervised approaches. The effectiveness of the proposed method is demonstrated on benchmark MI-MPC problems, where it achieves significant computational speedups while maintaining strong feasibility and near-optimal control performance.</p>
+<p><img alt="Hybrid learning-to-optimize framework" src="../img/posts/L4DC/model.png"/></p>
+<h2 id="results">Results</h2>
+<p>We evaluate the proposed hybrid L2O framework on two representative MI-MPC benchmarks:</p>
+<ol>
+<li><strong>Robot navigation with collision avoidance</strong>, where binary variables encode logical collision-avoidance constraints and interact strongly with continuous states and inputs.</li>
+<li><strong>Thermal energy tank control</strong>, where integer variables directly appear in the objective function and govern operational modes.</li>
+</ol>
+<p>We compare three approaches:</p>
+<ul>
+<li><strong>Hybrid L2O (H-L2O)</strong> — proposed method</li>
+<li><strong>Supervised learning (SL)</strong> — trained only using labeled optimal integer solutions</li>
+<li><strong>Self-supervised learning (SSL)</strong> — trained using objective- and constraint-based losses only</li>
+</ul>
+<p>Performance is evaluated using constraint violation rates and optimality gaps relative to the globally optimal solution.</p>
+<p><strong>Discussion:</strong> Overall, the results demonstrate that the proposed hybrid learning-to-optimize (L2O) framework achieves a strong balance between feasibility and optimality across both benchmarks.
+These results highlight that combining supervised and self-supervised objectives is crucial for producing solutions that are both feasible and near-optimal in mixed-integer control problems.</p>
+<hr/>
+<h3 id="robot-navigation-results">Robot Navigation Results</h3>
+<p><img alt="Robot navigation comparison" src="../img/posts/L4DC/robot.png"/>
+<!-- ![Robot navigation animation](../img/posts/L4DC/robot_nav.gif) --></p>
+<figure style="text-align: center;">
+<img src="../img/posts/L4DC/robot_nav.gif" width="500"/>
+<figcaption>
+    An example of robot navigation under mixed-integer MPC using L2O method.
+  </figcaption>
+</figure>
+<div style="max-width: 720px; margin: 2rem auto;">
+<video controls="" height="405" playsinline="" width="100%">
+<source src="https://pub-6191ce2447d545b0ba681f0dc19a861c.r2.dev/animation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </source></video>
+</div>
+<figcaption>
+Animation of robot navigation with obstacle avoidance.
+</figcaption>
+<hr/>
+<h3 id="thermal-energy-tank-results">Thermal Energy Tank Results</h3>
+<p><img alt="Thermal energy tank comparison" src="../img/posts/L4DC/tank.png"/></p>
+<hr/>
+<h3 id="computational-efficiency">Computational Efficiency</h3>
+<p><img alt="Solving time comparison" src="../img/posts/L4DC/time.png"/></p>
+<p>Across both benchmarks, the L2O-based approaches are significantly faster than a state-of-the-art MIQP solver. In particular, the proposed framework achieves approximately:</p>
+<ul>
+<li><strong>9× speedup</strong> for the robot navigation problem, and</li>
+<li><strong>12× speedup</strong> for the thermal energy tank problem.</li>
+</ul>
+<p>These results demonstrate the suitability of the proposed hybrid L2O framework for real-time mixed-integer MPC applications.</p>
+<hr/>
+<h2 id="publications">Publications</h2>
+<ul>
+<li><strong>A Hybrid Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming</strong><br/>
+<em>Viet-Anh Le, Mu Xie, Rahul Mangharam</em><br/>
+<em>8th Annual Learning for Dynamics \&amp; Control Conference (L4DC), 2026</em><br/>
+<a href="https://arxiv.org/abs/2511.19383">arXiv preprint</a></li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Viet-Anh Le, Mu Xie, Rahul Mangharam</p>
+<h2 id="code-github-repository">Code: <a href="https://github.com/mlab-upenn/L2O-MIQP">GitHub Repository</a></h2>
+<h2 id="citation">Citation</h2>
+<pre><code>
+@inproceedings{le2026hybrid,
+  title={A Hybrid Learning-to-Optimize Framework for Mixed-Integer Quadratic Programming}, 
+  author={Le, Viet-Anh and Xie, Mu and Mangharam, Rahul},
+  year={2026},
+  booktitle={8th Annual Learning for Dynamics \&amp; Control Conference},
+}
+</code></pre>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#code-github-repository">Code: <a href="https://github.com/mlab-upenn/L2O-MIQP">GitHub Repository</a></a></li>
+<li><a href="#citation">Citation</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

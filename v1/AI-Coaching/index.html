@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>AI Coaching | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="AI Coaching" property="og:title">
+<meta content="xLAB" name="author">
+<meta content="en" property="og:locale">
+<meta content="A game-theoretic framework for AI-assisted skill acquisition in high-speed drone racing and other cyber-physical tasks." name="description"/>
+<meta content="A game-theoretic framework for AI-assisted skill acquisition in high-speed drone racing and other cyber-physical tasks." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/AI-Coaching/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/AI-Coaching/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/AI-Coaching/img/posts/AIC/drone_racing.gif" property="og:image"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-02-09T14:19:19-05:00" property="article:published_time"/>
+<meta content="2026-02-09T14:19:19-05:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/AI-Coaching/img/posts/AIC/drone_racing.gif" name="twitter:image"/>
+<meta content="AI Coaching" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLAB"},"dateModified":"2026-02-09T14:19:19-05:00","datePublished":"2026-02-09T14:19:19-05:00","description":"A game-theoretic framework for AI-assisted skill acquisition in high-speed drone racing and other cyber-physical tasks.","headline":"AI Coaching","image":"https://waybaba.github.io/xlab-preview/v1/AI-Coaching/img/posts/AIC/drone_racing.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/AI-Coaching/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLAB"},"url":"https://waybaba.github.io/xlab-preview/v1/AI-Coaching/"}</script>
+<!-- End Jekyll SEO tag -->
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+ style="background: url('https://waybaba.github.io/xlab-preview/v1/img/posts/AIC/drone_racing.gif') no-repeat center center; background-size: cover;" >
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">AI Coaching</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim hero-video">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://pub-6191ce2447d545b0ba681f0dc19a861c.r2.dev/Aic_cover.mp4" type="video/mp4"/>
+</video>
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        AI Coaching
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p><strong>Abstract:</strong> AI copilots can substantially boost human performance through shared control, but excessive assistance can induce over-reliance and skill atrophy. We study how an embodied AI agent can act as a coach that accelerates human motor-skill development. Effective coaching requires strategic scaffolding and stepping back aligned with the learner’s capability, allowing productive failures that drive learning. We formalize AI coaching as a dynamic game in which the learner optimizes task performance while the coach targets independent competence. Building on this formalism, we develop a reinforcement learning framework that combines adaptive shared control with probabilistic models of skill evolution, enabling tractable training of coaching policies.</p>
+<div style="text-align:center; max-width: 760px; margin: 2rem auto;">
+<img alt="Parallel quadrotor training rollouts in simulation" src="../img/posts/AIC/drone_racing.gif" width="760">
+<p style="color:#5a6675; font-size:0.95rem; margin-top:0.5rem;">Parallel training rollouts of a single quadrotor racing through gates in Isaac Lab. Multiple drones appear because environments are vectorized for faster policy learning, not because of multi-agent interaction.</p>
+</img></div>
+<h2 id="overview-video">Overview Video</h2>
+<p>This presentation gives a high-level walkthrough of the paper: motivation, formulation, method, and user-study results.</p>
+<div style="max-width: 900px; margin: 2rem auto;">
+<video controls="" playsinline="" poster="../img/posts/AIC/aic.jpg" preload="metadata" width="100%">
+<source src="../img/posts/AIC/AIC_CoRL_3min.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </source></video>
+</div>
+<h2 id="formulation-and-method">Formulation and Method</h2>
+<p>To train a coaching policy, we augment the robot’s transition dynamics with two learner-side components: a skill-conditioned control policy, and a model of how the learner’s latent skill evolves in response to coaching events such as successful or failed task attempts.</p>
+<p>At deployment, the coach maintains a belief over learner skill and uses the learned blending policy to combine the learner command with the expert action, allowing the system to scaffold or step back according to the learner and task context.</p>
+<div style="text-align:center; max-width: 900px; margin: 2rem auto;">
+<img alt="L2C training and deployment overview" src="../img/posts/AIC/overview.png" width="900"/>
+<p style="color:#5a6675; font-size:0.95rem; margin-top:0.5rem;">Overview of L2C: simulation-time coach training, adaptive action blending, and live coaching with skill belief.</p>
+</div>
+<h2 id="experimental-results">Experimental Results</h2>
+<p>We conducted a user study with N = 33 participants from diverse drone-flying backgrounds in a high-fidelity FPV drone racing simulator. Each participant was randomly assigned to one of three AI coaches: <strong>L2C</strong> and two baselines, <strong>RBF</strong> and <strong>MIA</strong>. We measure human skill change with two metrics: lap time and failure count.</p>
+<p>For <strong>L2C</strong>, a paired-samples t-test comparing pre- and post-coaching lap times yielded a mean reduction of 27.9% with p = 0.005 and Cohen’s d_z = −1.08. Similarly, a paired t-test on per-lap failure count yielded a mean reduction of 3.52 failures per lap with p &lt; 0.001 and Cohen’s d_z = −2.13.</p>
+<p>For <strong>RBF</strong>, paired tests showed no reliable change in lap time, but the paired test on failure count showed significance. For <strong>MIA</strong>, paired tests showed no reliable change in lap time or failure count. All four between-method contrasts favor <strong>L2C</strong> with medium-to-large effect sizes.</p>
+<div style="text-align:center; max-width: 900px; margin: 2rem auto;">
+<img alt="Experimental results comparing L2C, RBF, and MIA" src="../img/posts/AIC/results.png" width="900"/>
+<p style="color:#5a6675; font-size:0.95rem; margin-top:0.5rem;">After coaching, learners trained with L2C show significant reductions in lap time and failure count and report higher safety, performance, agency, and satisfaction than both baselines.</p>
+</div>
+<h2 id="pre--and-post-coaching-trajectories">Pre- and Post-Coaching Trajectories</h2>
+<p>The objective metrics show that L2C achieves larger reductions in lap time and failure count than both baselines. This figure provides qualitative examples of how human trajectories change after coaching, complementing aggregate metrics by showing the spatial structure of the laps.</p>
+<div style="text-align:center; max-width: 900px; margin: 2rem auto;">
+<img alt="Pre and post coaching trajectory examples" src="../img/posts/AIC/trajectories.png" width="900"/>
+<p style="color:#5a6675; font-size:0.95rem; margin-top:0.5rem;">Example pre- and post-coaching evaluation trajectories for the three coaching methods. Rows correspond to coaching methods; columns compare pre- and post-coaching evaluation laps.</p>
+</div>
+<h2 id="assistance-adaptation">Assistance Adaptation</h2>
+<p>We inspect how L2C changes assistance based on the estimated learner skill and physical context. The magnitude of the blending vector along example trajectories shows two emerging forms of adaptation: across learners, a novice receives more assistance than a more skilled learner; within each trajectory, ∣λ∣ varies sharply around the gates, the task-critical states that determine whether the learner collides or passes successfully.</p>
+<div style="text-align:center; max-width: 900px; margin: 2rem auto;">
+<img alt="L2C assistance coefficient visualization" src="../img/posts/AIC/lambda.png" width="900"/>
+<p style="color:#5a6675; font-size:0.95rem; margin-top:0.5rem;">L2C assistance coefficient ∣λ∣ visualized on example racing trajectories. Left: estimated skill θ̂ = 0; right: estimated skill θ̂ = 0.5.</p>
+</div>
+<h2 id="simulation-environment">Simulation Environment</h2>
+<p>We structure each trial into three phases: a pre- and post-coaching test, and a main coached training session. To prevent participant fatigue, we limit the training session to 15 laps and restrict the human’s control authority to yaw and roll rate while automating the pitch rate and thrust.</p>
+<p>The simulated racing environment consists of 12 gates in a figure-eight layout, with two gates spatially overlapping at the central crossing. Participants are instructed to fly through the gates in the prescribed order, completing the course as quickly as possible.</p>
+<div style="text-align:center; max-width: 900px; margin: 2rem auto;">
+<img alt="Drone racing simulation assets and track layout" src="../img/posts/AIC/simulation-overview.png" width="900"/>
+<p style="color:#5a6675; font-size:0.95rem; margin-top:0.5rem;">Drone-racing simulation assets: quadrotor model visualization, true-scale gate-quadrotor comparison, and top-down track map showing gate order, positions, headings, and traversal direction.</p>
+</div>
+<h2 id="contributors">Contributors</h2>
+<p>Wei Wang, Enlin Gu, Antonio Loquercio, Rahul Mangharam, and Haimin Hu</p>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#overview-video">Overview Video</a></li>
+<li><a href="#formulation-and-method">Formulation and Method</a></li>
+<li><a href="#experimental-results">Experimental Results</a></li>
+<li><a href="#pre--and-post-coaching-trajectories">Pre- and Post-Coaching Trajectories</a></li>
+<li><a href="#assistance-adaptation">Assistance Adaptation</a></li>
+<li><a href="#simulation-environment">Simulation Environment</a></li>
+<li><a href="#contributors">Contributors</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>

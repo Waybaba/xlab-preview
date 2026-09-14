@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta name="darkreader-lock"/>
+<link href="/xlab-preview/v1/assets/css/app.css" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/penn-design.css?v=1789413339" rel="stylesheet"/>
+<link href="/xlab-preview/v1/assets/css/interior-design.css?v=1789413339" rel="stylesheet"/>
+<script defer="" src="/xlab-preview/v1/assets/js/interior-design.js"></script>
+<link href="/xlab-preview/v1/img/favicon.ico" rel="shortcut icon" type="image/png">
+<script defer="" src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" rel="stylesheet"/>
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>RetroLifts: Low-Cost Forklift Retrofits for Scalable Autonomous Brownfield Deployments | xLAB: Safe Autonomous Systems Lab</title>
+<meta content="Jekyll v4.4.1" name="generator">
+<meta content="RetroLifts: Low-Cost Forklift Retrofits for Scalable Autonomous Brownfield Deployments" property="og:title">
+<meta content="xLab" name="author">
+<meta content="en" property="og:locale">
+<meta content="A low-cost hardware and software retrofit solution enabling scalable autonomous forklift fleets in brownfield warehouse environments." name="description"/>
+<meta content="A low-cost hardware and software retrofit solution enabling scalable autonomous forklift fleets in brownfield warehouse environments." name="twitter:description" property="og:description"/>
+<link href="https://waybaba.github.io/xlab-preview/v1/retrolifts/" rel="canonical">
+<meta content="https://waybaba.github.io/xlab-preview/v1/retrolifts/" property="og:url"/>
+<meta content="xLAB: Safe Autonomous Systems Lab" property="og:site_name"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/retrolifts/img/posts/retrolifts/sim.gif" property="og:image"/>
+<meta content="article" property="og:type"/>
+<meta content="2026-02-15T09:54:00-05:00" property="article:published_time"/>
+<meta content="2026-02-15T09:54:00-05:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://waybaba.github.io/xlab-preview/v1/retrolifts/img/posts/retrolifts/sim.gif" name="twitter:image"/>
+<meta content="RetroLifts: Low-Cost Forklift Retrofits for Scalable Autonomous Brownfield Deployments" name="twitter:title"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xLab"},"dateModified":"2026-02-15T09:54:00-05:00","datePublished":"2026-02-15T09:54:00-05:00","description":"A low-cost hardware and software retrofit solution enabling scalable autonomous forklift fleets in brownfield warehouse environments.","headline":"RetroLifts: Low-Cost Forklift Retrofits for Scalable Autonomous Brownfield Deployments","image":"https://waybaba.github.io/xlab-preview/v1/retrolifts/img/posts/retrolifts/sim.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://waybaba.github.io/xlab-preview/v1/retrolifts/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://waybaba.github.io/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"},"name":"xLab"},"url":"https://waybaba.github.io/xlab-preview/v1/retrolifts/"}</script>
+<!-- End Jekyll SEO tag -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script charset="utf-8" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script charset="utf-8" src="https://vincenttam.github.io/javascripts/MathJaxLocal.js" type="text/javascript">
+</script>
+</link></meta></meta></meta></meta></link><meta content="noindex, nofollow" name="robots"/><link href="/xlab-preview/v1/assets/css/preview-notice.css" rel="stylesheet"/></head>
+<body class="page-project page-project--editorial"><aside aria-label="Preview notice" class="preview-notice"><div><span>Design preview · v1 · September 2026</span><a href="https://xlab.upenn.edu/" rel="noopener" target="_blank">Current website ↗</a></div></aside>
+<a class="is-sr-only skip-link" href="#main-content"> Skip to main content </a>
+<nav class="navbar is-primary">
+<div class="container">
+<div class="navbar-brand">
+<a class="navbar-item navbar-logo" href="/xlab-preview/v1/">
+<img alt="xLAB logo" class="navbar-logo-image" src="/xlab-preview/v1/img/xLAB_colors_white_bg_tight.png"/>
+<span class="navbar-logo-text">xLAB: Safe Autonomous Systems Lab</span>
+</a>
+<button aria-controls="navMenu" aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+</div>
+<div class="navbar-menu" id="navMenu">
+<div class="navbar-start">
+<a class="navbar-item" href="/xlab-preview/v1/">Home</a>
+<a class="navbar-item" href="/xlab-preview/v1/members/">Team</a>
+<a class="navbar-item" href="/xlab-preview/v1/research/">Research</a>
+<a class="navbar-item" href="/xlab-preview/v1/research-roadmap/">Research Roadmap</a>
+<a class="navbar-item" href="/xlab-preview/v1/publications/">Publications</a>
+<a class="navbar-item" href="/xlab-preview/v1/teaching/">Teaching</a>
+<a class="navbar-item" href="https://roboracer.ai/">Roboracer</a>
+<a class="navbar-item" href="/xlab-preview/v1/events/">Events</a>
+<a class="navbar-item" href="/xlab-preview/v1/contact/">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+          el.setAttribute('aria-expanded', String(el.classList.contains('is-active')));
+        });
+      });
+    }
+  });
+</script>
+<!-- <section class="hero  is-medium  is-bold is-primary   hero--scrim "
+ style="background: url('https://waybaba.github.io/xlab-preview/v1/img/posts/retrolifts/sim.gif') no-repeat center center; background-size: cover;" >
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">RetroLifts: Low-Cost Forklift Retrofits for Scalable Autonomous Brownfield Deployments</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section> -->
+<section class="hero is-medium is-bold is-primary hero--scrim hero-video">
+<video autoplay="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/retrolifts/Sim_optimized.mp4" type="video/mp4"/>
+</video>
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-2">
+      
+        RetroLifts: Low-Cost Forklift Retrofits for Scalable Autonomous Brownfield Deployments
+      
+    </h1>
+<p class="subtitle is-3"></p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<a class="back-link" href="/xlab-preview/v1/research/"><span aria-hidden="true">←</span> All research</a>
+<div class="project-layout">
+<main class="content project-article" id="main-content"><h2 id="overview">Overview</h2>
+<p>The logistics industry faces a 46% annual employee turnover rate, while current Autonomous Mobile Robot (AMR) forklifts cost 4–5× more than manual forklifts and struggle in dynamic “brownfield” environments.</p>
+<p><strong>RetroLifts</strong> provides a low-cost, non-invasive retrofit kit that enables scalable automation of existing electric forklifts. Instead of replacing fleets, we retrofit them with infrastructure-based perception and teleoperated autonomy — enabling gradual adoption and reduced capital expenditure.</p>
+<p>Primary benefits:</p>
+<ul>
+<li><strong>Low Cost</strong> – No need to purchase entirely new AMRs</li>
+<li><strong>Scalable</strong> – Incremental fleet upgrades</li>
+<li><strong>Robust</strong> – Infrastructure-based perception avoids common AMR failures</li>
+</ul>
+<div style="text-align:center;">
+<img src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/retrolifts/poster.webp" width="800">
+</img></div>
+<h2 id="system-architecture">System Architecture</h2>
+<p>RetroLifts integrates three components:</p>
+<h3 id="1-forklift-retrofit-perception--teleop-hardware">1. Forklift Retrofit (Perception + Teleop Hardware)</h3>
+<ul>
+<li>Drive-by-wire teleoperation</li>
+<li>Onboard compute unit</li>
+<li>Wireless low-latency communication</li>
+<li>Custom actuator interface for steering, throttle, brake</li>
+</ul>
+<h3 id="2-infrastructure-edge-birds-eye-perception">2. Infrastructure Edge (Bird’s-Eye Perception)</h3>
+<ul>
+<li>Facility-mounted camera network</li>
+<li>3D detection of forklifts</li>
+<li>Multi-camera fusion via Extended Kalman Filter (EKF)</li>
+<li>Sub-meter localization accuracy</li>
+</ul>
+<h3 id="3-cloud-robotics-fleet-planning">3. Cloud Robotics (Fleet Planning)</h3>
+<ul>
+<li>Global route planning</li>
+<li>Multi-agent navigation</li>
+<li>Fleet management and WMS integration</li>
+</ul>
+<p>This collaborative perception–planning–control pipeline enables multiple forklifts to operate concurrently.</p>
+<div style="text-align:center;">
+<img src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/retrolifts/architecture.jpg" width="800"/>
+</div>
+<h2 id="digital-twin-development">Digital Twin Development</h2>
+<p>To safely develop and validate the system, we built high-fidelity digital twin environments representing Raymond facilities and other warehouse configurations.</p>
+<p>Components:</p>
+<ul>
+<li>Accurate 3D warehouse model</li>
+<li>Forklift dynamics simulation</li>
+<li>Camera sensor simulation</li>
+<li>Multi-forklift navigation testing</li>
+</ul>
+<p>The digital twin enabled rapid prototyping and sim-to-real transfer before physical deployment.</p>
+<div style="max-width: 900px; margin: 2rem auto;">
+<video autoplay="" height="405" loop="" muted="" playsinline="" width="100%">
+<source src="https://pub-33ab648a62794a59a34293b3fe2bd3cd.r2.dev/retrolifts/Sim.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </source></video>
+</div>
+<h2 id="infrastructure-based-localization">Infrastructure-Based Localization</h2>
+<p>We implemented a bird’s-eye-view localization system using a multi-camera setup in the warehouse.</p>
+<p>Algorithm Pipeline:</p>
+<ol>
+<li>3D detection for forklift bounding boxes</li>
+<li>Multi-camera data fusion</li>
+<li>Extended Kalman Filter (EKF) state estimation</li>
+</ol>
+<p><strong>Result:</strong><br/>
+Sub-meter tracking accuracy with 0.46 m RMSE, robust to real-world sensor dropouts.</p>
+<h2 id="on-site-warehouse-validation">On-Site Warehouse Validation</h2>
+<p>All algorithms were validated through field experiments at a Raymond Corporation facility.</p>
+<p>Methodology:</p>
+<ul>
+<li>Live warehouse camera feeds</li>
+<li>Real forklifts operating under varied lighting and environmental conditions</li>
+<li>Qualisys motion capture ground-truth benchmarking</li>
+</ul>
+<p>These experiments demonstrated robustness in dynamic brownfield environments.</p>
+<h2 id="hardware-development">Hardware Development</h2>
+<p>A non-invasive hardware kit was developed for teleoperation:</p>
+<ul>
+<li>Custom actuator mechanisms</li>
+<li>Onboard compute unit</li>
+<li>Wireless communication module</li>
+</ul>
+<p>This enables:</p>
+<ul>
+<li>Automatic teleoperation</li>
+<li>Manual fallback</li>
+<li>Gradual adoption across fleets</li>
+</ul>
+<h2 id="key-results">Key Results</h2>
+<ul>
+<li><strong>Validated Low-Cost Brownfield Automation Strategy</strong></li>
+<li><strong>0.46 m RMSE Sub-Meter Tracking Accuracy</strong></li>
+<li><strong>Robust EKF Fusion Under Sensor Dropouts</strong></li>
+<li><strong>Functional Teleoperation Hardware Prototype</strong></li>
+<li><strong>Fleet-Level Coordination and Planning Demonstrated in Digital Twin</strong></li>
+</ul>
+<p>RetroLifts provides a scalable pathway to automate existing fleets without replacing infrastructure.</p>
+<h2 id="contributors">Contributors</h2>
+<p><strong>PI:</strong> Professor Rahul Mangharam</p>
+<p>Giang Vu, Lintao Zheng, Mikhael Thomas, Philippe Do, Thanh Ly, Truong Nguyen, Akshaya Nidhi Bhati, Prakriti Prasad</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>A big thank you to the Raymond Corporation team for engineering assistance and facilitating warehouse experiments.</p>
+</main>
+<aside aria-label="On this page" class="project-outline">
+<div class="contents">
+<div class="menu">
+<p class="menu-label">On this page</p>
+<ul class="project-outline__links">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#system-architecture">System Architecture</a></li>
+<li><a href="#digital-twin-development">Digital Twin Development</a></li>
+<li><a href="#infrastructure-based-localization">Infrastructure-Based Localization</a></li>
+<li><a href="#on-site-warehouse-validation">On-Site Warehouse Validation</a></li>
+<li><a href="#hardware-development">Hardware Development</a></li>
+<li><a href="#key-results">Key Results</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer" id="site-footer">
+<div class="container footer-grid">
+<img alt="xLAB" class="footer-xlab" src="/xlab-preview/v1/img/xlab-white-transparent.png"/>
+<div class="footer-social">
+<a aria-label="Medium" class="button" href="https://medium.com/adventures-in-autonomous-vehicles" itemprop="medium" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-medium fa-lg"></i></a>
+<a aria-label="GitHub" class="button" href="https://github.com/mlab-upenn" itemprop="github" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-github fa-lg"></i></a>
+<a aria-label="YouTube" class="button" href="https://www.youtube.com/@RealTimemLAB" itemprop="youtube" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-youtube fa-lg"></i></a>
+</div>
+<img alt="University of Pennsylvania" class="footer-penn" src="/xlab-preview/v1/img/UPenn-logo.svg"/>
+</div>
+</footer>
+<script src="/xlab-preview/v1/assets/js/app.js"></script>
+<!-- footer scripts -->
+</body>
+</html>
