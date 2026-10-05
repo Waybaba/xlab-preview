@@ -405,12 +405,6 @@ video {
   padding: 15px 22px 15px 8px;
   line-height: 1.25;
 }
-.overview-tile__label:after {
-  content: "↗";
-  color: var(--penn-red);
-  font-size: 22px;
-  margin-left: 12px;
-}
 .overview-tile:hover {
   border-color: var(--penn-blue);
   transform: translateY(-2px);

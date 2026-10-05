@@ -26,7 +26,6 @@
 .project-card.is-previewing .project-card__video{opacity:1}
 .project-card__body{display:flex;flex-direction:column;gap:12px;padding:20px 0 0;flex:1}
 .project-card__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.025em}
-.project-card__meta>span{font-size:23px;line-height:1;color:var(--penn-red)}
 .content .project-card__title,.project-card__title{font-family:Inter,Helvetica,Arial,sans-serif;font-size:23px;font-weight:650;line-height:1.28;letter-spacing:-.025em;color:var(--penn-blue);margin:0!important}
 .project-card:hover .project-card__title{color:var(--penn-red)}
 .content .project-card__description,.project-card__description{font-size:16px;line-height:1.65;margin:0!important;color:var(--muted);max-width:62ch}
@@ -50,7 +49,6 @@
 .person-card--lead .person-card__body h3{font-size:28px;margin:0 0 9px}
 .person-card--lead .person-card__body p{font-size:17px}
 .person-card__link{display:inline-block;margin-top:22px;font-size:14px;font-weight:550;color:var(--penn-red)}
-.person-card__link span{margin-left:14px}
 /* Activity dates, imagery and descriptions follow one common alignment. */
 .events-directory .directory-toolbar{margin-bottom:30px}
 .event-year,.content .event-year{font-family:Inter,Helvetica,Arial,sans-serif;color:var(--penn-red);font-size:21px;line-height:1.2;font-weight:650;letter-spacing:-.025em;margin:42px 0 0;scroll-margin-top:100px}
@@ -65,7 +63,6 @@
 .event-entry__body h3 a:hover{color:var(--penn-red)}
 .event-entry__body p,.content .event-entry__body p{font-size:16px;line-height:1.65;color:var(--muted);margin:0 0 16px;max-width:80ch}
 .content a.event-entry__link,.event-entry__link{color:var(--penn-red);font-size:14px;font-weight:600;text-decoration:none!important;display:inline-block}
-.event-entry__link span[aria-hidden]{margin-left:8px}
 .events-upcoming{margin-bottom:48px}
 .events-upcoming>.directory-heading{padding-bottom:20px;border-bottom:1px solid var(--line)}
 /* Readable profiles and long-form project pages. */
@@ -103,7 +100,6 @@
 /* Homepage entry links and featured research share the interior's rhythm. */
 .home-explore{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px;margin:36px 0 64px}
 .content .home-explore a{display:flex;align-items:center;justify-content:space-between;gap:15px;color:var(--penn-blue);font-size:21px;font-weight:600;letter-spacing:-.02em;padding:22px 0;border-top:1px solid var(--line);text-decoration:none!important}
-.home-explore a span:last-child{color:var(--penn-red)}
 .home-explore a:hover{color:var(--penn-red)}
 @media(min-width:1450px){.people-grid{gap:32px}.person-card__portrait{max-height:220px}.project-grid{gap:48px 40px}}
 @media(max-width:1100px){
