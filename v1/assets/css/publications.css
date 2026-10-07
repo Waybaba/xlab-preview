@@ -1,0 +1,31 @@
+/* Compact publication rows: title = paper; optional project and repo icons. */
+.bibliography { list-style: none; margin-left: 0 !important; }
+.bibliography > li { padding: 0 0 1.2rem; margin: 0 0 1.2rem; border-bottom: 1px solid var(--site-border, #dce1e8); }
+.bibliography > li:last-child { border-bottom: 0; }
+.csl-content { display: block; padding-left: 0; }
+.csl-block { display: block; font-size: 16px; line-height: 1.55; }
+.csl-title { font-size: 17px; margin-bottom: 5px; overflow-wrap: anywhere; }
+.csl-title b { font-weight: 600; }
+.content .publication-paper { color: var(--site-link, #011f5b); text-decoration: none !important; }
+.content .publication-paper b { color: inherit !important; }
+.content .publication-paper:hover { text-decoration: underline !important; text-underline-offset: 3px; }
+.csl-author { font-size: 15px; overflow-wrap: anywhere; }
+.publication-author { text-decoration: underline; text-underline-offset: 2px; }
+.csl-event, .csl-venue, .csl-editor { color: var(--site-muted, #566171); font-size: 15px; margin-top: 3px; }
+.publication-resources { display: inline-flex; vertical-align: middle; gap: 3px; white-space: nowrap; }
+.content a.publication-resource, a.publication-resource { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; color: var(--site-link, #011f5b); text-decoration: none !important; background: transparent; border: 0; }
+.publication-resource i { font-size: 15px; }
+.content a.publication-resource:hover { color: var(--site-hover, #990000); }
+.publication-paper:focus-visible, .publication-resource:focus-visible { outline: 2px solid var(--site-link, #011f5b); outline-offset: 3px; }
+.publication-note { margin: 5px 0 0 !important; color: var(--site-muted, #566171); font-size: 13px; }
+.publication-entry > .csl-entry { margin: 0; }
+.content .bibliography > li { padding: 0 0 1rem; margin: 0 0 1rem; }
+.content .bibliography .csl-content { margin-left: 0; max-width: 100%; padding-left: 0; }
+.content .bibliography .csl-title { font-size: 17px; line-height: 1.55; }
+.content .bibliography .csl-author, .content .bibliography .csl-event,
+.content .bibliography .csl-venue, .content .bibliography .csl-editor { font-size: 15px; line-height: 1.55; }
+@media (max-width: 600px) {
+  .csl-title, .content .bibliography .csl-title { font-size: 16px; }
+  .csl-author, .csl-event, .content .bibliography .csl-author,
+  .content .bibliography .csl-event { font-size: 14px; }
+}
