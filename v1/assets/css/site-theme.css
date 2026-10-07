@@ -1,88 +1,159 @@
-/* Follow the OS theme without storing an override or changing research media. */
+/* Canonical UI palette. Brand colors are never used as dark-mode prose colors.
+   Every component consumes a role: background, surface, text, muted, link,
+   accent, controls, syntax, or plot. Light/dark pairs are contrast-tested. */
 :root {
   color-scheme: light dark;
+  --brand-penn-blue: #011f5b;
+  --brand-penn-red: #990000;
   --site-bg: #ffffff;
   --site-surface: #ffffff;
+  --site-soft: #f5f7fa;
+  --site-raised: #edf1f6;
   --site-text: #172539;
+  --site-heading: #011f5b;
   --site-muted: #566171;
   --site-link: #011f5b;
   --site-hover: #990000;
   --site-border: #dce1e8;
+  --site-on-link: #ffffff;
+  --site-hero-bg: #011f5b;
+  --site-hero-text: #ffffff;
+  --site-success: #0d6442;
+  --site-warning: #865500;
+  --site-danger: #990000;
+  --site-code-bg: #f5f7fa;
+  --site-code-text: #172539;
+  --site-code-keyword: #692c91;
+  --site-code-string: #0d6442;
+  --site-code-number: #865500;
+  --site-code-comment: #566171;
+  --site-code-name: #011f5b;
+  --site-plot-bg: #ffffff;
+  --site-plot-text: #172539;
+  --site-plot-muted: #566171;
+  --site-selection-bg: #011f5b;
+  --site-selection-text: #ffffff;
+  /* Compatibility aliases for the older Penn and upstream Bulma components. */
+  --ink: var(--site-text);
+  --muted: var(--site-muted);
+  --line: var(--site-border);
+  --paper: var(--site-soft);
+  --white: var(--site-surface);
+  --bulma-body-background-color: var(--site-bg);
+  --bulma-body-color: var(--site-text);
+  --bulma-text: var(--site-text);
+  --bulma-text-strong: var(--site-text);
+  --bulma-text-weak: var(--site-muted);
+  --bulma-link-text: var(--site-link);
+  --bulma-link: var(--site-link);
+  --bulma-border: var(--site-border);
+  --bulma-scheme-main: var(--site-surface);
+  --bulma-scheme-main-bis: var(--site-soft);
+  --bulma-scheme-main-ter: var(--site-raised);
 }
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --site-bg: #0b1220;
     --site-surface: #131e30;
+    --site-soft: #19283e;
     --site-raised: #1a2940;
     --site-text: #e4eaf3;
+    --site-heading: #e4eaf3;
     --site-muted: #acbbcf;
     --site-link: #abc5ff;
     --site-hover: #ff9c9c;
     --site-border: #32445e;
-    --ink: var(--site-text);
-    --muted: var(--site-muted);
-    --line: var(--site-border);
-    --paper: var(--site-surface);
-    --white: var(--site-surface);
+    --site-on-link: #0b1220;
+    --site-hero-bg: #11294c;
+    --site-success: #9ddcbb;
+    --site-warning: #ffd18b;
+    --site-danger: #ff9c9c;
+    --site-code-bg: #131e30;
+    --site-code-text: #e4eaf3;
+    --site-code-keyword: #cfb4ff;
+    --site-code-string: #9ddcbb;
+    --site-code-number: #ffd18b;
+    --site-code-comment: #acbbcf;
+    --site-code-name: #abc5ff;
+    --site-selection-bg: #abc5ff;
+    --site-selection-text: #0b1220;
   }
   html, body { background: var(--site-bg) !important; color: var(--site-text) !important; }
   .content, .title, .subtitle, .content strong, .content b,
   .has-text-black, .has-text-dark, .has-text-primary,
   .content h1, .content h2, .content h3, .content h4, .content h5, .content h6,
   .directory-heading, .project-card__title, .person-card__body h3,
-  .people-section__title, .event-entry__date, .event-entry__date strong {
-    color: var(--site-text) !important;
-  }
+  .people-section__title, .event-entry__date, .event-entry__date strong,
+  .content .bibliography .csl-title { color: var(--site-heading) !important; }
   a, .content a, .content a.publication-paper, .content a.publication-resource,
-  .overview-tile__label, .content .home-explore a, .event-entry__body h3 a {
-    color: var(--site-link) !important;
-  }
+  .overview-tile__label, .content .home-explore a, .event-entry__body h3 a { color: var(--site-link) !important; }
   a:hover, .content a:hover, .content a.publication-resource:hover,
   .project-card:hover .project-card__title, .person-card:hover h3,
-  .search-clear, .event-year, .event-entry__link, .person-card__link {
-    color: var(--site-hover) !important;
-  }
+  .search-clear, .event-year, .event-entry__link, .person-card__link { color: var(--site-hover) !important; }
   .csl-event, .csl-venue, .csl-editor, .publication-note, .back-link,
   .directory-label, .project-card__meta, .project-card__description,
   .person-card__body p, .event-entry__body p, .project-outline a,
-  .project-outline p, .directory-nav a, .has-text-grey, .has-text-grey-dark {
-    color: var(--site-muted) !important;
-  }
+  .project-outline p, .directory-nav a, .has-text-grey, .has-text-grey-dark { color: var(--site-muted) !important; }
   .navbar.is-primary, .navbar-dropdown, .navbar-menu, .footer,
   .has-background-white, .has-background-white-ter, .has-background-white-bis,
   .card, .card-content, .card-footer, .box, .panel, .notification,
   .overview-tile, .project-search, .content a.project-card, a.project-card,
-  .contents, .content blockquote, .content pre, .content code,
-  .table, .table td, .content table td {
+  .contents, .content blockquote, .table, .table td, .content table td {
     background: var(--site-surface) !important;
     color: var(--site-text) !important;
     border-color: var(--site-border) !important;
   }
   .navbar.is-primary .navbar-logo-text, .navbar-item, .navbar-link,
-  .navbar-burger, .navbar.is-primary .navbar-item { color: var(--site-text) !important; }
+  .navbar-burger, .navbar.is-primary .navbar-item { color: var(--site-heading) !important; }
   .navbar-item:hover, .navbar-link:hover, .navbar-item.is-active,
   .navbar-dropdown .navbar-item:hover { background: var(--site-raised) !important; }
-  .navbar-logo-image { background: #ffffff; border-radius: 3px; padding: 2px; }
+  .navbar-logo-image { background: var(--site-plot-bg); border-radius: 3px; padding: 2px; }
   .navbar.is-primary .navbar-burger span { background-color: var(--site-text) !important; }
-  .project-card__media, .project-card__video, .person-card__portrait,
-  .event-entry__image { background: var(--site-raised) !important; border-color: var(--site-border) !important; }
-  .button, .input, .textarea, .select select, .project-search input {
-    background: var(--site-raised) !important;
-    border-color: var(--site-border) !important;
-    color: var(--site-text) !important;
-  }
+  .project-card__media, .project-card__video, .person-card__portrait, .event-entry__image { background: var(--site-raised) !important; border-color: var(--site-border) !important; }
+  .button, .input, .textarea, .select select, .project-search input { background: var(--site-raised) !important; border-color: var(--site-border) !important; color: var(--site-text) !important; }
   input::placeholder, textarea::placeholder { color: var(--site-muted); opacity: 1; }
-  .content table th, .table th { background: #173157 !important; color: var(--site-text) !important; border-color: var(--site-border) !important; }
+  .content table th, .table th { background: var(--site-raised) !important; color: var(--site-text) !important; border-color: var(--site-border) !important; }
   .content table tbody tr:hover td { background: var(--site-raised) !important; }
-  .hero.is-primary, .hero.is-secondary { background-color: #11294c !important; }
-  .hero .title, .hero .subtitle, .page-title-banner__text { color: #ffffff !important; }
-  .card-header-title, .card .title, .card .subtitle { color: var(--site-text) !important; }
+  .hero.is-primary, .hero.is-secondary { background-color: var(--site-hero-bg) !important; }
+  .hero .title, .hero .subtitle, .page-title-banner__text { color: var(--site-hero-text) !important; }
+  .card-header-title, .card .title, .card .subtitle { color: var(--site-heading) !important; }
   .content hr { background: var(--site-border); }
-  .preview-notice { background: #19283e !important; color: var(--site-text) !important; border-color: var(--site-border) !important; }
+  .preview-notice { background: var(--site-soft) !important; color: var(--site-text) !important; border-color: var(--site-border) !important; }
   .preview-notice a { color: var(--site-link) !important; }
-  a:focus-visible, button:focus-visible, input:focus-visible, .project-search:focus-within { outline-color: var(--site-link) !important; }
-  ::selection { background: #4568a3; color: #ffffff; }
 }
+/* Neutral surfaces keep text readable instead of inheriting arbitrary tile colors. */
+.footer { background: var(--site-surface); color: var(--site-muted); }
+.footer a { color: var(--site-link); }
+.overview-tile__label { background: var(--site-soft) !important; color: var(--site-link) !important; }
+/* Table headings use the same surface/text pair in both modes. */
+.content table th, .table th { background: var(--site-raised) !important; color: var(--site-text) !important; border-color: var(--site-border) !important; }
+/* Inverse foreground/background pairs switch together, rather than passing
+   through a low-contrast midpoint during a color animation. */
+.button, .sx-seg button, .sx-fit-primary, .sx-mpc-steps button { transition-property: border-color, box-shadow, transform; }
+/* Shared semantic roles also override the legacy card's more specific rules. */
+.card .card-content p, .card .card-content .content p { color: var(--site-text); }
+.card .card-footer .card-footer-item, .card .card-description-box p,
+.media-caption, .content .media-caption { color: var(--site-muted); }
+.media-caption { font-size: .95rem; margin-top: .5rem; }
+.citation-code, .citation-code__toolbar { border-color: var(--site-border); }
+.citation-code__toolbar { background: var(--site-soft); }
+pre, code, .content pre, .content code, .highlight {
+  color: var(--site-code-text); background: var(--site-code-bg);
+}
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cp, .highlight .cs,
+.highlight .gp, .highlight .go { color: var(--site-code-comment); }
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp,
+.highlight .kr, .highlight .kt, .highlight .nc, .highlight .nd, .highlight .nt { color: var(--site-code-keyword); }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sa, .highlight .sb,
+.highlight .sc, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si,
+.highlight .sr, .highlight .ss, .highlight .sx { color: var(--site-code-string); }
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi,
+.highlight .mo, .highlight .il { color: var(--site-code-number); }
+.highlight .na, .highlight .nb, .highlight .ne, .highlight .nf, .highlight .nl,
+.highlight .nn, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: var(--site-code-name); }
+.highlight .o, .highlight .ow, .highlight .p, .highlight .n { color: var(--site-code-text); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline-color: var(--site-link) !important; }
+::selection { background: var(--site-selection-bg); color: var(--site-selection-text); }
 @media print { :root { color-scheme: light; } }
 @media (max-width: 600px) {
   .page-title-banner { overflow-x: clip; max-width: 100%; }
