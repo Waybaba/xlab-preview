@@ -1,0 +1,50 @@
+/* The same quiet, left-hand contents rail as the AI Coaching project page. */
+.roadmap-layout { max-width: 1000px; }
+.roadmap-body > .container.roadmap-layout.has-outline { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; max-width: 1360px !important; align-items: start; }
+.roadmap-article { min-width: 0; }
+.roadmap-contents[hidden] { display: none; }
+.roadmap-contents { position: sticky; top: 96px; align-self: start; }
+.roadmap-contents summary { font-size: 20px; font-weight: 650; color: var(--site-text, #172539); border-bottom: 1px solid var(--site-border, #dce1e8); padding: 0 0 12px; margin-bottom: 10px; cursor: pointer; }
+.roadmap-contents nav { max-height: calc(100vh - 160px); max-height: calc(100dvh - 160px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.roadmap-contents ol { list-style: none; padding: 0; margin: 0; }
+.roadmap-contents a { display: block; padding: 6px 8px 6px 10px; margin: 1px 0; border-left: 2px solid transparent; color: var(--site-muted, #566171) !important; font-size: 14px; line-height: 1.4; text-decoration: none; overflow-wrap: anywhere; }
+.roadmap-contents a:hover { color: var(--site-link, #011f5b); }
+.roadmap-contents a:focus-visible { outline: 2px solid var(--site-link, #011f5b); outline-offset: -2px; }
+.roadmap-contents .is-current-group > a { color: var(--site-link, #011f5b) !important; font-weight: 600; }
+.roadmap-contents a.is-active { color: var(--site-hover, #990000) !important; border-left-color: var(--site-hover, #990000); font-weight: 650; }
+.roadmap-contents-subsections { display: none; }
+.roadmap-contents .is-current-group > .roadmap-contents-subsections { display: block; }
+.roadmap-contents-subsections a { margin-left: 12px; font-size: 13px; }
+.roadmap-article .thrust, .roadmap-article h3, #roadmap-overview { scroll-margin-top: 96px; }
+.roadmap-article img { max-width: 100%; }
+/* Keep the original article readable in the site's native dark theme. */
+.roadmap-body { color: var(--site-text, #172539); }
+.roadmap-body .author-line, .roadmap-body .rr-stop-label,
+.roadmap-body figure figcaption, .roadmap-body details.refs ol { color: var(--site-muted, #566171); }
+.roadmap-body .thrust p, .roadmap-body .thrust h3,
+.roadmap-body .rr-stop.is-active .rr-stop-label { color: var(--site-text, #172539); }
+.roadmap-body .thrust h2, .roadmap-body .thrust-label, .roadmap-body .author-line a,
+.roadmap-body details.refs summary, .roadmap-body .bio h3 { color: var(--site-link, #011f5b); }
+.roadmap-body .thrust, .roadmap-body .thrust figure img,
+.roadmap-body details.refs { border-color: var(--site-border, #dce1e8); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media screen and (prefers-color-scheme: dark) {
+  .roadmap-body .bio, .roadmap-body details.refs, .roadmap-body .more-links a { background: var(--site-surface, #131e30); color: var(--site-link, #abc5ff); border-color: var(--site-border, #32445e); }
+  .roadmap-body .rr-dot { background: var(--site-surface, #131e30); color: var(--site-text, #e4eaf3); border-color: var(--site-border, #32445e); }
+  .roadmap-body .rr-stop.is-active .rr-dot { background: #011f5b; color: #ffffff; border-color: var(--site-link, #abc5ff); }
+}
+@media (max-width: 1100px) {
+  .roadmap-body > .container.roadmap-layout.has-outline { grid-template-columns: 215px minmax(0, 1fr); gap: 32px; }
+}
+@media (max-width: 1000px) {
+  .roadmap-body > .container.roadmap-layout.has-outline { display: block; max-width: 1000px !important; }
+  .roadmap-contents { position: static; margin-bottom: 28px; }
+  .roadmap-contents summary { font-size: 17px; margin-bottom: 0; padding: 12px 0; }
+  .roadmap-contents nav { max-height: 55vh; margin-top: 10px; }
+  .roadmap-contents a { font-size: 14px; padding-top: 9px; padding-bottom: 9px; }
+  .roadmap-contents-subsections a { font-size: 13px; }
+}
+@media print {
+  .roadmap-contents { display: none !important; }
+  .roadmap-body > .container.roadmap-layout.has-outline { display: block; max-width: 1000px !important; }
+}
