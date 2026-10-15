@@ -1,0 +1,29 @@
+/* Text-only cards keep the directory consistent without unverified portraits. */
+.people-grid--collaborators {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.person-card--collaborator {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+.person-card--collaborator:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+  .people-grid--collaborators {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .people-grid--collaborators {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+}
